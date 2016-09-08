@@ -1,17 +1,27 @@
-var React = require('react');
-var Up = require('./Up.jsx');
-var Weather = require('./Weather.jsx');
-var Down = require('./Down.jsx');
-var Traffic = require('./Traffic.jsx');
+// var React = require('react');
+import React from 'react';
+import Up from './Up.jsx';
+import Weather from './Weather.jsx';
+import Down from './Down.jsx';
+import Traffic from './Traffic.jsx';
+
+/* var Up = require();
+var Weather = require();
+var Down = require();
+var Traffic = require();
 
 /*class Container extends React.Component {
 	constructor(props){
 		super(props);
 	}
 */
-var Container = React.createClass({
+export default class Container extends React.Component {
 	
-	render: function(){
+	constructor(props) {
+		super(props);
+	}
+
+	render (){
 
 		var containerStyle = {
 			background: '#F2F4F5',
@@ -26,6 +36,8 @@ var Container = React.createClass({
 			padding: 0,
 			margin: 0
 		}
+
+		var degrees = "18"+String.fromCharCode(176)
 
 		return (
 			<div style = {containerStyle} className = 'row'>
@@ -43,13 +55,14 @@ var Container = React.createClass({
 				</div>	
 
 				<div className = 'col-sm-3 col-m-3 col-xs-12' style={noPadding} >
-					<Weather temp = "18&deg;" location = "Paris" />
-					
+					<Weather temp = {degrees} location = "Paris" />
+					<Traffic title = "New Visitors" value = "1.5k" color = "#0D48DF" />
+					<Traffic title = "Bounce Rate" value = "50%" color = "#9D38C3" />
+					<Traffic title = "Searches" value = "28%" color = "#C32B2B" />
+					<Traffic title = "Traffic" value = "140.5 kb" color = "#14A063" />				
 				</div>
 			</div>
 			)
 	}
 
-});
-
-module.exports = Container;
+};

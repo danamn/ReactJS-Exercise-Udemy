@@ -1,8 +1,12 @@
-var React = require('react');
+import React from 'react';
 
-var DownCol = React.createClass({
+export default class DownCol extends React.Component {
 
-	render: function(){
+	constructor(props) {
+		super(props);
+	}
+
+	render(){
 		var topRowStyle = {
 			textAlign: 'center',
 			fontSize: '1.6em',
@@ -27,6 +31,4 @@ var DownCol = React.createClass({
 
 	}
 
-});
-
-module.exports = DownCol;
+};

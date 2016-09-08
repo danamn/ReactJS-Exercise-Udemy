@@ -20760,295 +20760,571 @@ process.chdir = function (dir) {
 process.umask = function() { return 0; };
 
 },{}],172:[function(require,module,exports){
-var React = require('react');
-var Up = require('./Up.jsx');
-var Weather = require('./Weather.jsx');
-var Down = require('./Down.jsx');
-var Traffic = require('./Traffic.jsx');
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Up = require('./Up.jsx');
+
+var _Up2 = _interopRequireDefault(_Up);
+
+var _Weather = require('./Weather.jsx');
+
+var _Weather2 = _interopRequireDefault(_Weather);
+
+var _Down = require('./Down.jsx');
+
+var _Down2 = _interopRequireDefault(_Down);
+
+var _Traffic = require('./Traffic.jsx');
+
+var _Traffic2 = _interopRequireDefault(_Traffic);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // var React = require('react');
+
+
+/* var Up = require();
+var Weather = require();
+var Down = require();
+var Traffic = require();
 
 /*class Container extends React.Component {
 	constructor(props){
 		super(props);
 	}
 */
-var Container = React.createClass({
-	displayName: 'Container',
+var Container = function (_React$Component) {
+	_inherits(Container, _React$Component);
 
+	function Container(props) {
+		_classCallCheck(this, Container);
 
-	render: function () {
-
-		var containerStyle = {
-			background: '#F2F4F5',
-			marginLeft: 0,
-			width: 730,
-			paddingRight: 0,
-			paddingLeft: 15,
-			fontFamily: "sans-serif"
-		};
-
-		var noPadding = {
-			padding: 0,
-			margin: 0
-		};
-
-		return React.createElement(
-			'div',
-			{ style: containerStyle, className: 'row' },
-			React.createElement(
-				'div',
-				{ className: 'col-sm-9 col-m-9 col-xs-12' },
-				React.createElement(
-					'div',
-					{ className: 'row', style: noPadding },
-					React.createElement(Up, { headerValue: '20', bodyValue: 'New followers added this month' }),
-					React.createElement(Up, { headerValue: '$ 1250', bodyValue: 'Average Monthly Income' }),
-					React.createElement(Up, { headerValue: '$ 13856', bodyValue: 'Yearly Income Goal' })
-				),
-				React.createElement(
-					'div',
-					{ style: { paddingRight: '10px' } },
-					React.createElement(Down, { color: '#5063C4' }),
-					React.createElement(Down, { color: '#793180' })
-				)
-			),
-			React.createElement(
-				'div',
-				{ className: 'col-sm-3 col-m-3 col-xs-12', style: noPadding },
-				React.createElement(Weather, { temp: '18°', location: 'Paris' })
-			)
-		);
+		return _possibleConstructorReturn(this, (Container.__proto__ || Object.getPrototypeOf(Container)).call(this, props));
 	}
 
-});
+	_createClass(Container, [{
+		key: 'render',
+		value: function render() {
 
-module.exports = Container;
+			var containerStyle = {
+				background: '#F2F4F5',
+				marginLeft: 0,
+				width: 730,
+				paddingRight: 0,
+				paddingLeft: 15,
+				fontFamily: "sans-serif"
+			};
+
+			var noPadding = {
+				padding: 0,
+				margin: 0
+			};
+
+			var degrees = "18" + String.fromCharCode(176);
+
+			return _react2.default.createElement(
+				'div',
+				{ style: containerStyle, className: 'row' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'col-sm-9 col-m-9 col-xs-12' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'row', style: noPadding },
+						_react2.default.createElement(_Up2.default, { headerValue: '20', bodyValue: 'New followers added this month' }),
+						_react2.default.createElement(_Up2.default, { headerValue: '$ 1250', bodyValue: 'Average Monthly Income' }),
+						_react2.default.createElement(_Up2.default, { headerValue: '$ 13856', bodyValue: 'Yearly Income Goal' })
+					),
+					_react2.default.createElement(
+						'div',
+						{ style: { paddingRight: '10px' } },
+						_react2.default.createElement(_Down2.default, { color: '#5063C4' }),
+						_react2.default.createElement(_Down2.default, { color: '#793180' })
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'col-sm-3 col-m-3 col-xs-12', style: noPadding },
+					_react2.default.createElement(_Weather2.default, { temp: degrees, location: 'Paris' }),
+					_react2.default.createElement(_Traffic2.default, { title: 'New Visitors', value: '1.5k', color: '#0D48DF' }),
+					_react2.default.createElement(_Traffic2.default, { title: 'Bounce Rate', value: '50%', color: '#9D38C3' }),
+					_react2.default.createElement(_Traffic2.default, { title: 'Searches', value: '28%', color: '#C32B2B' }),
+					_react2.default.createElement(_Traffic2.default, { title: 'Traffic', value: '140.5 kb', color: '#14A063' })
+				)
+			);
+		}
+	}]);
+
+	return Container;
+}(_react2.default.Component);
+
+exports.default = Container;
+;
 
 },{"./Down.jsx":173,"./Traffic.jsx":175,"./Up.jsx":176,"./Weather.jsx":177,"react":170}],173:[function(require,module,exports){
-var React = require('react');
-var DownCol = require("./DownCol.jsx");
+"use strict";
 
-var Down = React.createClass({
-	displayName: "Down",
-
-	render: function () {
-
-		var panelStyle = {
-			margin: "5 30 0 20",
-			padding: 0
-
-		};
-
-		var panelHeadingStyle = {
-			background: this.props.color,
-			border: 'none',
-			height: 120,
-			paddingLeft: 0,
-			paddingRight: 20,
-			paddingBottom: 0
-
-		};
-
-		var panelBodyStyle = {
-			padding: "5px 20px 0 0",
-			fontSize: '0.7em',
-			background: '#94989E',
-			color: 'white'
-		};
-
-		return React.createElement(
-			"div",
-			{ className: "panel panel-default", style: panelStyle },
-			React.createElement(
-				"div",
-				{ className: "panel-heading ", style: panelHeadingStyle },
-				"  "
-			),
-			React.createElement(
-				"div",
-				{ className: "panel-body", style: panelBodyStyle },
-				React.createElement(
-					"div",
-					{ className: "row" },
-					React.createElement(DownCol, { value: "15080", text: " Shot Views" }),
-					React.createElement(DownCol, { value: "1200", text: "Likes" }),
-					React.createElement(DownCol, { value: "5100", text: "Comments" })
-				)
-			)
-		);
-	}
-
+Object.defineProperty(exports, "__esModule", {
+	value: true
 });
 
-module.exports = Down;
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _DownCol = require("./DownCol.jsx");
+
+var _DownCol2 = _interopRequireDefault(_DownCol);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Down = function (_React$Component) {
+	_inherits(Down, _React$Component);
+
+	function Down(props) {
+		_classCallCheck(this, Down);
+
+		return _possibleConstructorReturn(this, (Down.__proto__ || Object.getPrototypeOf(Down)).call(this, props));
+	}
+
+	_createClass(Down, [{
+		key: "render",
+		value: function render() {
+
+			var panelStyle = {
+				margin: "5px 0",
+				padding: 0
+			};
+
+			var panelHeadingStyle = {
+				background: this.props.color,
+				border: 'none',
+				height: 120,
+				paddingLeft: 0,
+				paddingRight: 20,
+				paddingBottom: 0
+
+			};
+
+			var panelBodyStyle = {
+				padding: "5px 20px 0 0",
+				fontSize: '0.7em',
+				background: '#94989E',
+				color: 'white'
+			};
+
+			return _react2.default.createElement(
+				"div",
+				{ className: "panel panel-default", style: panelStyle },
+				_react2.default.createElement(
+					"div",
+					{ className: "panel-heading ", style: panelHeadingStyle },
+					"  "
+				),
+				_react2.default.createElement(
+					"div",
+					{ className: "panel-body", style: panelBodyStyle },
+					_react2.default.createElement(
+						"div",
+						{ className: "row" },
+						_react2.default.createElement(_DownCol2.default, { value: "15080", text: " Shot Views" }),
+						_react2.default.createElement(_DownCol2.default, { value: "1200", text: "Likes" }),
+						_react2.default.createElement(_DownCol2.default, { value: "5100", text: "Comments" })
+					)
+				)
+			);
+		}
+	}]);
+
+	return Down;
+}(_react2.default.Component);
+
+exports.default = Down;
+;
 
 },{"./DownCol.jsx":174,"react":170}],174:[function(require,module,exports){
-var React = require('react');
+'use strict';
 
-var DownCol = React.createClass({
-	displayName: 'DownCol',
-
-
-	render: function () {
-		var topRowStyle = {
-			textAlign: 'center',
-			fontSize: '1.6em',
-			fontWeight: 'bold',
-			letterSpacing: '1px',
-			marginBottom: 0
-		};
-
-		var bottomRowStyle = {
-			textAlign: 'center',
-			fontSize: '1em'
-		};
-
-		return React.createElement(
-			'div',
-			{ className: 'col-sm-4' },
-			React.createElement(
-				'p',
-				{ style: topRowStyle },
-				' ',
-				this.props.value,
-				' '
-			),
-			React.createElement(
-				'p',
-				{ style: bottomRowStyle },
-				' ',
-				this.props.text,
-				' '
-			)
-		);
-	}
-
+Object.defineProperty(exports, "__esModule", {
+	value: true
 });
 
-module.exports = DownCol;
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var DownCol = function (_React$Component) {
+	_inherits(DownCol, _React$Component);
+
+	function DownCol(props) {
+		_classCallCheck(this, DownCol);
+
+		return _possibleConstructorReturn(this, (DownCol.__proto__ || Object.getPrototypeOf(DownCol)).call(this, props));
+	}
+
+	_createClass(DownCol, [{
+		key: 'render',
+		value: function render() {
+			var topRowStyle = {
+				textAlign: 'center',
+				fontSize: '1.6em',
+				fontWeight: 'bold',
+				letterSpacing: '1px',
+				marginBottom: 0
+			};
+
+			var bottomRowStyle = {
+				textAlign: 'center',
+				fontSize: '1em'
+			};
+
+			return _react2.default.createElement(
+				'div',
+				{ className: 'col-sm-4' },
+				_react2.default.createElement(
+					'p',
+					{ style: topRowStyle },
+					' ',
+					this.props.value,
+					' '
+				),
+				_react2.default.createElement(
+					'p',
+					{ style: bottomRowStyle },
+					' ',
+					this.props.text,
+					' '
+				)
+			);
+		}
+	}]);
+
+	return DownCol;
+}(_react2.default.Component);
+
+exports.default = DownCol;
+;
 
 },{"react":170}],175:[function(require,module,exports){
-var React = require('react');
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Traffic = function (_React$Component) {
+	_inherits(Traffic, _React$Component);
+
+	function Traffic(props) {
+		_classCallCheck(this, Traffic);
+
+		return _possibleConstructorReturn(this, (Traffic.__proto__ || Object.getPrototypeOf(Traffic)).call(this, props));
+	}
+
+	_createClass(Traffic, [{
+		key: 'render',
+		value: function render() {
+
+			var panelStyle = {
+				margin: '20px 7px 0 0px',
+				width: 160,
+				padding: 0
+			};
+
+			var panelHeadingStyle = {
+				background: this.props.color,
+				border: 'none',
+				height: 50,
+				padding: 0,
+				color: 'white'
+			};
+
+			var panelBodyStyle = {
+				padding: "5px 20px 0 0",
+				background: 'white',
+				height: 40
+			};
+
+			var titleStyle = {
+				margin: 0,
+				padding: '0 0 0 10px',
+				fontSize: '0.8em'
+			};
+
+			var valueStyle = {
+				margin: 0,
+				padding: '0 0 10px 10px',
+				fontSize: '1.3em',
+				fontWeight: 'bold'
+			};
+
+			return _react2.default.createElement(
+				'div',
+				{ className: 'panel panel-default col-sm-4 col-m-4 col-xs-12', style: panelStyle },
+				_react2.default.createElement(
+					'div',
+					{ className: 'panel-heading ', style: panelHeadingStyle },
+					_react2.default.createElement(
+						'p',
+						{ style: titleStyle },
+						' ',
+						this.props.title,
+						' '
+					),
+					_react2.default.createElement(
+						'p',
+						{ style: valueStyle },
+						' ',
+						this.props.value,
+						' '
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'panel-body', style: panelBodyStyle },
+					' '
+				)
+			);
+		}
+	}]);
+
+	return Traffic;
+}(_react2.default.Component);
+
+exports.default = Traffic;
+;
 
 },{"react":170}],176:[function(require,module,exports){
-var React = require('react');
+'use strict';
 
-var Up = React.createClass({
-	displayName: 'Up',
-
-	render: function () {
-
-		var panelStyle = {
-			margin: "12px 12px 15px 0px",
-			paddingLeft: 10,
-			width: 155
-		};
-
-		var panelHeadingStyle = {
-			background: 'white',
-			fontWeight: 'bold',
-			border: 'none',
-			fontSize: '1.2em',
-			padding: "30px 20px 0 0",
-			color: '#6C6B6B'
-		};
-
-		var panelBodyStyle = {
-			padding: "5px 20px 30px 0",
-			fontSize: '0.7em',
-			color: '#BFBCBC'
-		};
-
-		return React.createElement(
-			'div',
-			{ className: 'panel panel-default col-sm-4 col-m-4 col-xs-12', style: panelStyle },
-			React.createElement(
-				'div',
-				{ className: 'panel-heading ', style: panelHeadingStyle },
-				' ',
-				this.props.headerValue,
-				' '
-			),
-			React.createElement(
-				'div',
-				{ className: 'panel-body', style: panelBodyStyle },
-				' ',
-				this.props.bodyValue,
-				' '
-			)
-		);
-	}
-
+Object.defineProperty(exports, "__esModule", {
+	value: true
 });
 
-module.exports = Up;
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Up = function (_React$Component) {
+	_inherits(Up, _React$Component);
+
+	function Up(props) {
+		_classCallCheck(this, Up);
+
+		return _possibleConstructorReturn(this, (Up.__proto__ || Object.getPrototypeOf(Up)).call(this, props));
+	}
+
+	_createClass(Up, [{
+		key: 'render',
+		value: function render() {
+
+			var panelStyle = {
+				margin: "12px 12px 15px 0px",
+				paddingLeft: 10,
+				width: 155
+			};
+
+			var panelHeadingStyle = {
+				background: 'white',
+				fontWeight: 'bold',
+				border: 'none',
+				fontSize: '1.2em',
+				padding: "30px 20px 0 0",
+				color: '#6C6B6B'
+			};
+
+			var panelBodyStyle = {
+				padding: "5px 20px 30px 0",
+				fontSize: '0.7em',
+				color: '#BFBCBC'
+			};
+
+			return _react2.default.createElement(
+				'div',
+				{ className: 'panel panel-default col-sm-4 col-m-4 col-xs-12', style: panelStyle },
+				_react2.default.createElement(
+					'div',
+					{ className: 'panel-heading ', style: panelHeadingStyle },
+					' ',
+					this.props.headerValue,
+					' '
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'panel-body', style: panelBodyStyle },
+					' ',
+					this.props.bodyValue,
+					' '
+				)
+			);
+		}
+	}]);
+
+	return Up;
+}(_react2.default.Component);
+
+exports.default = Up;
+;
 
 },{"react":170}],177:[function(require,module,exports){
-var React = require('react');
+'use strict';
 
-var Weather = React.createClass({
-	displayName: 'Weather',
-
-
-	render: function () {
-
-		var panelStyle = {
-			margin: '10px 7px 0 0px',
-			width: 160,
-			paddingLeft: 25,
-			background: 'orange',
-			textAlign: "center"
-		};
-
-		var panelHeadingStyle = {
-
-			border: 'none',
-			fontSize: '1.8em',
-			paddingTop: 18,
-			paddingLeft: 15,
-			paddingRight: 20,
-			paddingBottom: 0,
-			color: 'white',
-			background: 'orange'
-		};
-
-		var panelBodyStyle = {
-			paddingTop: 0,
-			paddingLeft: 0,
-			paddingRight: 20,
-			paddingBottom: 45,
-			fontSize: '0.7em',
-			color: 'white'
-		};
-
-		return React.createElement(
-			'div',
-			{ className: 'panel panel-default col-sm-3 col-m-3', style: panelStyle },
-			React.createElement(
-				'div',
-				{ className: 'panel-heading ', style: panelHeadingStyle },
-				' ',
-				this.props.temp,
-				' '
-			),
-			React.createElement(
-				'div',
-				{ className: 'panel-body', style: panelBodyStyle },
-				' ',
-				this.props.location,
-				' '
-			)
-		);
-	}
-
+Object.defineProperty(exports, "__esModule", {
+	value: true
 });
 
-module.exports = Weather;
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Weather = function (_React$Component) {
+	_inherits(Weather, _React$Component);
+
+	function Weather(props) {
+		_classCallCheck(this, Weather);
+
+		return _possibleConstructorReturn(this, (Weather.__proto__ || Object.getPrototypeOf(Weather)).call(this, props));
+	}
+
+	_createClass(Weather, [{
+		key: 'render',
+		value: function render() {
+
+			var panelStyle = {
+				margin: '10px 7px 0 0px',
+				width: 160,
+				background: 'orange',
+				textAlign: "center"
+			};
+
+			var panelHeadingStyle = {
+
+				border: 'none',
+				fontSize: '1.8em',
+				padding: "18px 20px 0 15px",
+				color: 'white',
+				background: 'orange'
+			};
+
+			var panelBodyStyle = {
+				paddingTop: 0,
+				paddingLeft: 0,
+				paddingRight: 20,
+				paddingBottom: 45,
+				fontSize: '0.7em',
+				color: 'white'
+			};
+
+			return _react2.default.createElement(
+				'div',
+				{ className: 'panel panel-default col-sm-3 col-m-3', style: panelStyle },
+				_react2.default.createElement(
+					'div',
+					{ className: 'panel-heading ', style: panelHeadingStyle },
+					' ',
+					this.props.temp,
+					' '
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'panel-body', style: panelBodyStyle },
+					' ',
+					this.props.location,
+					' '
+				)
+			);
+		}
+	}]);
+
+	return Weather;
+}(_react2.default.Component);
+
+exports.default = Weather;
+;
 
 },{"react":170}],178:[function(require,module,exports){
-var React = require('react');
-var ReactDOM = require('react-dom');
-var Container = require('./Components/Container.jsx');
+'use strict';
 
-ReactDOM.render(React.createElement(Container, null), document.getElementById("container"));
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = require('react-dom');
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _Container = require('./Components/Container.jsx');
+
+var _Container2 = _interopRequireDefault(_Container);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_reactDom2.default.render(_react2.default.createElement(_Container2.default, null), document.getElementById("container"));
 
 },{"./Components/Container.jsx":172,"react":170,"react-dom":1}]},{},[178]);

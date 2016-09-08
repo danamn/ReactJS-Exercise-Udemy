@@ -1,14 +1,17 @@
-var React = require('react');
-var DownCol = require("./DownCol.jsx");
+import React from 'react';
+import DownCol from "./DownCol.jsx";
 
-var Down = React.createClass({
-	render: function(){
+export default class Down extends React.Component {
 
+	constructor(props) {
+		super(props);
+	}
+
+	render(){
 
 		var panelStyle = {
-			margin: "5 30 0 20",
+			margin: "5px 0",
 			padding: 0
-
 		}
 
 
@@ -44,6 +47,4 @@ var Down = React.createClass({
 			)
 	}
 
-});
-
-module.exports = Down;
+};

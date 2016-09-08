@@ -1,13 +1,16 @@
-var React = require('react');
+import React from 'react';
 
-var Weather = React.createClass({
+export default class Weather extends React.Component{
 
-		render: function(){
+	constructor(props) {
+		super(props);
+	}
+
+	render(){
 
 		var panelStyle = {
 			margin: '10px 7px 0 0px',
 			width: 160,
-			paddingLeft: 25,
 			background: 'orange',
 			textAlign: "center"
 		}
@@ -16,10 +19,7 @@ var Weather = React.createClass({
 			
 			border: 'none',
 			fontSize: '1.8em',
-			paddingTop: 18,
-			paddingLeft: 15,
-			paddingRight: 20,
-			paddingBottom: 0, 
+			padding: "18px 20px 0 15px",
 			color: 'white',
 			background: 'orange'
 		}
@@ -43,6 +43,5 @@ var Weather = React.createClass({
 		
 	}
 
-});
+};
 
-module.exports = Weather;

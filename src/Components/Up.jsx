@@ -1,7 +1,12 @@
-var React = require('react');
+import React from 'react';
 
-var Up = React.createClass({
-	render: function(){
+export default class Up extends React.Component {
+
+	constructor(props) {
+			super(props);
+		}
+		
+	render(){
 		
 		var panelStyle = {
 			margin: "12px 12px 15px 0px",
@@ -32,6 +37,4 @@ var Up = React.createClass({
 			)
 	}
 
-});
-
-module.exports = Up;
+};
