@@ -21,7 +21,7 @@ export default class Down extends React.Component {
 			height:120,
 			paddingLeft: 0,
 			paddingRight: 20,
-			paddingBottom: 0, 
+			paddingBottom: 0
 
 		}
 

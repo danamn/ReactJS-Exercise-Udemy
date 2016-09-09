@@ -11,7 +11,7 @@ export default class Traffic extends React.Component {
 
 		var panelStyle = {
 			margin: '20px 7px 0 0px',
-			width: 160,
+			minWidth: 160,
 			padding: 0
 		}
 
@@ -31,7 +31,7 @@ export default class Traffic extends React.Component {
 
 		var titleStyle = {
 			margin: 0,
-			padding: '0 0 0 10px',
+			padding: '5px 0 0 10px',
 			fontSize: '0.8em'
 		}
 
@@ -44,12 +44,14 @@ export default class Traffic extends React.Component {
 
 
 		return (
-			<div className="panel panel-default col-sm-4 col-m-4 col-xs-12" style = {panelStyle}>
-	  			<div className="panel-heading " style = {panelHeadingStyle}> 
-	  				<p style = {titleStyle}> {this.props.title} </p>
-	  				<p style = {valueStyle}> {this.props.value} </p>
-	  			</div>
-	  			<div className="panel-body" style={panelBodyStyle} > </div>
+			<div className = "col-xs-12"> 
+				<div className="panel panel-default " style = {panelStyle}>
+		  			<div className="panel-heading " style = {panelHeadingStyle}> 
+		  				<p style = {titleStyle}> {this.props.title} </p>
+		  				<p style = {valueStyle}> {this.props.value} </p>
+		  			</div>
+		  			<div className="panel-body" style={panelBodyStyle} > </div>
+				</div>
 			</div>
 		)
 	}

@@ -21,7 +21,7 @@ export default class DownCol extends React.Component {
 		}
 
 		return (
-			<div className = "col-sm-4"> 
+			<div className = "col-sm-4 col-xs-4"> 
 				<p style = {topRowStyle}> {this.props.value} </p>
 				<p style= {bottomRowStyle}> {this.props.text} </p>
 			</div>

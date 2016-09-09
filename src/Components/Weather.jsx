@@ -10,7 +10,7 @@ export default class Weather extends React.Component{
 
 		var panelStyle = {
 			margin: '10px 7px 0 0px',
-			width: 160,
+			minWidth: 160,
 			background: 'orange',
 			textAlign: "center"
 		}
@@ -34,7 +34,7 @@ export default class Weather extends React.Component{
 		}	
 
 		return (
-			<div className="panel panel-default col-sm-3 col-m-3" style = {panelStyle}>
+			<div className="panel panel-default" style = {panelStyle}>
   				<div className="panel-heading " style = {panelHeadingStyle}> {this.props.temp} </div>
   				<div className="panel-body" style={panelBodyStyle} > {this.props.location} </div>
 			</div>

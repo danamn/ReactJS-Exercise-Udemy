@@ -26,7 +26,7 @@ export default class Container extends React.Component {
 		var containerStyle = {
 			background: '#F2F4F5',
 			marginLeft: 0,
-			width: 730,
+			maxWidth: 730,
 			paddingRight: 0,
 			paddingLeft: 15,
 			fontFamily: "sans-serif"
@@ -34,7 +34,7 @@ export default class Container extends React.Component {
 
 		var noPadding = {
 			padding: 0,
-			margin: 0
+			margin: 0,
 		}
 
 		var degrees = "18"+String.fromCharCode(176)
@@ -54,7 +54,7 @@ export default class Container extends React.Component {
 					</div>
 				</div>	
 
-				<div className = 'col-sm-3 col-m-3 col-xs-12' style={noPadding} >
+				<div className = 'col-sm-3 col-m-3 col-xs-12 row' style={noPadding} >
 					<Weather temp = {degrees} location = "Paris" />
 					<Traffic title = "New Visitors" value = "1.5k" color = "#0D48DF" />
 					<Traffic title = "Bounce Rate" value = "50%" color = "#9D38C3" />

@@ -20823,7 +20823,7 @@ var Container = function (_React$Component) {
 			var containerStyle = {
 				background: '#F2F4F5',
 				marginLeft: 0,
-				width: 730,
+				maxWidth: 730,
 				paddingRight: 0,
 				paddingLeft: 15,
 				fontFamily: "sans-serif"
@@ -20858,7 +20858,7 @@ var Container = function (_React$Component) {
 				),
 				_react2.default.createElement(
 					'div',
-					{ className: 'col-sm-3 col-m-3 col-xs-12', style: noPadding },
+					{ className: 'col-sm-3 col-m-3 col-xs-12 row', style: noPadding },
 					_react2.default.createElement(_Weather2.default, { temp: degrees, location: 'Paris' }),
 					_react2.default.createElement(_Traffic2.default, { title: 'New Visitors', value: '1.5k', color: '#0D48DF' }),
 					_react2.default.createElement(_Traffic2.default, { title: 'Bounce Rate', value: '50%', color: '#9D38C3' }),
@@ -21012,7 +21012,7 @@ var DownCol = function (_React$Component) {
 
 			return _react2.default.createElement(
 				'div',
-				{ className: 'col-sm-4' },
+				{ className: 'col-sm-4 col-xs-4' },
 				_react2.default.createElement(
 					'p',
 					{ style: topRowStyle },
@@ -21073,7 +21073,7 @@ var Traffic = function (_React$Component) {
 
 			var panelStyle = {
 				margin: '20px 7px 0 0px',
-				width: 160,
+				minWidth: 160,
 				padding: 0
 			};
 
@@ -21093,7 +21093,7 @@ var Traffic = function (_React$Component) {
 
 			var titleStyle = {
 				margin: 0,
-				padding: '0 0 0 10px',
+				padding: '5px 0 0 10px',
 				fontSize: '0.8em'
 			};
 
@@ -21106,29 +21106,33 @@ var Traffic = function (_React$Component) {
 
 			return _react2.default.createElement(
 				'div',
-				{ className: 'panel panel-default col-sm-4 col-m-4 col-xs-12', style: panelStyle },
+				{ className: 'col-xs-12' },
 				_react2.default.createElement(
 					'div',
-					{ className: 'panel-heading ', style: panelHeadingStyle },
+					{ className: 'panel panel-default ', style: panelStyle },
 					_react2.default.createElement(
-						'p',
-						{ style: titleStyle },
-						' ',
-						this.props.title,
-						' '
+						'div',
+						{ className: 'panel-heading ', style: panelHeadingStyle },
+						_react2.default.createElement(
+							'p',
+							{ style: titleStyle },
+							' ',
+							this.props.title,
+							' '
+						),
+						_react2.default.createElement(
+							'p',
+							{ style: valueStyle },
+							' ',
+							this.props.value,
+							' '
+						)
 					),
 					_react2.default.createElement(
-						'p',
-						{ style: valueStyle },
-						' ',
-						this.props.value,
+						'div',
+						{ className: 'panel-body', style: panelBodyStyle },
 						' '
 					)
-				),
-				_react2.default.createElement(
-					'div',
-					{ className: 'panel-body', style: panelBodyStyle },
-					' '
 				)
 			);
 		}
@@ -21177,7 +21181,7 @@ var Up = function (_React$Component) {
 			var panelStyle = {
 				margin: "12px 12px 15px 0px",
 				paddingLeft: 10,
-				width: 155
+				minWidth: 155
 			};
 
 			var panelHeadingStyle = {
@@ -21197,20 +21201,24 @@ var Up = function (_React$Component) {
 
 			return _react2.default.createElement(
 				'div',
-				{ className: 'panel panel-default col-sm-4 col-m-4 col-xs-12', style: panelStyle },
+				{ className: 'col-sm-4 col-m-4 col-xs-12' },
 				_react2.default.createElement(
 					'div',
-					{ className: 'panel-heading ', style: panelHeadingStyle },
-					' ',
-					this.props.headerValue,
-					' '
-				),
-				_react2.default.createElement(
-					'div',
-					{ className: 'panel-body', style: panelBodyStyle },
-					' ',
-					this.props.bodyValue,
-					' '
+					{ className: 'panel panel-default ', style: panelStyle },
+					_react2.default.createElement(
+						'div',
+						{ className: 'panel-heading ', style: panelHeadingStyle },
+						' ',
+						this.props.headerValue,
+						' '
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'panel-body', style: panelBodyStyle },
+						' ',
+						this.props.bodyValue,
+						' '
+					)
 				)
 			);
 		}
@@ -21258,7 +21266,7 @@ var Weather = function (_React$Component) {
 
 			var panelStyle = {
 				margin: '10px 7px 0 0px',
-				width: 160,
+				minWidth: 160,
 				background: 'orange',
 				textAlign: "center"
 			};
@@ -21283,7 +21291,7 @@ var Weather = function (_React$Component) {
 
 			return _react2.default.createElement(
 				'div',
-				{ className: 'panel panel-default col-sm-3 col-m-3', style: panelStyle },
+				{ className: 'panel panel-default', style: panelStyle },
 				_react2.default.createElement(
 					'div',
 					{ className: 'panel-heading ', style: panelHeadingStyle },
